@@ -1,0 +1,45 @@
+fun main() {
+
+    println(converterAnos(5)) // Chamada da função 1 com variável alterada
+
+    println(contarCaracteres("Exemplo")) // Chamada da função 2 com variável alterada
+
+    println(calcularCubo(7)) // Chamada da função 3 com variável alterada
+
+    println(converterMilhasParaKm(10.0)) // Chamada da função 4 com variável alterada
+
+    trocarLetrasEImprimir("Kotlin é Fantástico") // Chamada da função 5 com variável alterada
+}
+
+// 1. Função para converter anos em meses, dias, horas, minutos e segundos
+fun converterAnos(periodo: Int): String { // Alterado nome da variável de 'anos' para 'periodo'
+    val totalMeses = periodo * 12 // Alterado nome de 'meses' para 'totalMeses'
+    val totalDias = periodo * 365 // Alterado nome de 'dias' para 'totalDias'
+    val totalHoras = totalDias * 24 // Alterado nome de 'horas' para 'totalHoras'
+    val totalMinutos = totalHoras * 60 // Alterado nome de 'minutos' para 'totalMinutos'
+    val totalSegundos = totalMinutos * 60 // Alterado nome de 'segundos' para 'totalSegundos'
+
+    return """
+        $periodo anos equivalem a:
+        $totalMeses meses
+        $totalDias dias
+        $totalHoras horas
+        $totalMinutos minutos
+        $totalSegundos segundos
+        """.trimIndent()
+}
+
+// 2. Função para contar a quantidade de caracteres em uma string
+fun contarCaracteres(palavra: String): Int = palavra.length // Alterado nome de 'str' para 'palavra'
+
+// 3. Função para calcular o cubo de um número inteiro
+fun calcularCubo(valor: Int): Int = valor * valor * valor // Alterado nome de 'n' para 'valor'
+
+// 4. Função para converter milhas em quilômetros
+fun converterMilhasParaKm(distancia: Double): Double = distancia * 1.6 // Alterado nome de 'milhas' para 'distancia'
+
+// 5. Função para trocar letras "a" ou "A" por "x" e imprimir o resultado em maiúsculas
+fun trocarLetrasEImprimir(texto: String) { // Alterado nome de 'str' para 'texto'
+    val resultadoFinal = texto.replace(Regex("[aA]"), "x").toUpperCase() // Alterado nome de 'resultado' para 'resultadoFinal'
+    println(resultadoFinal)
+}
